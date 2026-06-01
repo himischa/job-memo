@@ -1,0 +1,20 @@
+# Java
+/target/
+*.class
+*.log
+*.jar
+*.war
+*.ear
+
+# Maven
+/.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+/.idea/
+*.iml
+/.classpath
+/.project
+/.settings/
+
+# Env
+.env
