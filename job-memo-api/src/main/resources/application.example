@@ -1,0 +1,12 @@
+spring.application.name=job-memo-api
+
+# Database
+spring.datasource.url=jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.jdbc.time_zone=UTC
+
+# Server
+server.port=${APP_PORT:8080}
