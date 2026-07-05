@@ -8,7 +8,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.time.Instant;
@@ -43,8 +42,7 @@ public class JobApplication {
     @Column(name = "source", length = 100)
     private String source;
 
-    @Lob
-    @Column(name = "notes")
+    @Column(name = "notes", columnDefinition = "TEXT")
     private String notes;
 
     @CreationTimestamp
