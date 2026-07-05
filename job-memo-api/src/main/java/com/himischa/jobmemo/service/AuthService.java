@@ -6,6 +6,7 @@ import com.himischa.jobmemo.dto.auth.RegisterRequest;
 import com.himischa.jobmemo.exception.DuplicateEmailException;
 import com.himischa.jobmemo.model.User;
 import com.himischa.jobmemo.repository.UserRepository;
+import com.himischa.jobmemo.security.JwtUtil;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -14,10 +15,12 @@ public class AuthService {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final JwtUtil jwtUtil;
 
-    public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+    public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder, JwtUtil jwtUtil) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.jwtUtil = jwtUtil;
     }
 
     public AuthResponse register(RegisterRequest request) {
@@ -32,7 +35,8 @@ public class AuthService {
 
         userRepository.save(user);
 
-        return new AuthResponse(null, user.getEmail(), user.getName());
+        String token = jwtUtil.generateToken(user.getEmail());
+        return new AuthResponse(token, user.getEmail(), user.getName());
     }
 
     public AuthResponse login(LoginRequest request) {
@@ -43,6 +47,7 @@ public class AuthService {
             throw new RuntimeException("Invalid email or password");
         }
 
-        return new AuthResponse(null, user.getEmail(), user.getName());
+        String token = jwtUtil.generateToken(user.getEmail());
+        return new AuthResponse(token, user.getEmail(), user.getName());
     }
 }
