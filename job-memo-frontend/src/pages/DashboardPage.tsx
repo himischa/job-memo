@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import api from '../lib/api';
 import Navbar from '../components/Navbar';
 import StatusBadge from '../components/StatusBadge';
@@ -19,6 +20,7 @@ const initialFilters: Filters = {
 };
 
 export default function DashboardPage() {
+  const navigate = useNavigate();
   const [applications, setApplications] = useState<ApplicationResponse[]>([]);
   const [filters, setFilters] = useState<Filters>(initialFilters);
   const [loading, setLoading] = useState(true);
@@ -222,7 +224,8 @@ export default function DashboardPage() {
                 {applications.map((app) => (
                   <tr
                     key={app.id}
-                    className="hover:bg-gray-50"
+                    className="cursor-pointer hover:bg-gray-50"
+                    onClick={() => navigate(`/applications/${app.id}`)}
                   >
                     <td className="px-4 py-3 font-medium text-gray-900">
                       {app.company}
