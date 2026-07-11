@@ -5,6 +5,8 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import DashboardPage from './pages/DashboardPage';
 import ApplicationDetailPage from './pages/ApplicationDetailPage';
+import CreateApplicationPage from './pages/CreateApplicationPage';
+import EditApplicationPage from './pages/EditApplicationPage';
 
 export default function App() {
   return (
@@ -22,10 +24,26 @@ export default function App() {
             }
           />
           <Route
+            path="/applications/new"
+            element={
+              <ProtectedRoute>
+                <CreateApplicationPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
             path="/applications/:id"
             element={
               <ProtectedRoute>
                 <ApplicationDetailPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/applications/:id/edit"
+            element={
+              <ProtectedRoute>
+                <EditApplicationPage />
               </ProtectedRoute>
             }
           />
