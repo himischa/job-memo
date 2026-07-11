@@ -15,3 +15,6 @@
 
 # Env
 .env
+
+# Build cache
+tsconfig.tsbuildinfo
