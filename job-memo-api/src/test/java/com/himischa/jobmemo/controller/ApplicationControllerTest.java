@@ -1,10 +1,10 @@
 package com.himischa.jobmemo.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.himischa.jobmemo.dto.application.ApplicationRequest;
 import com.himischa.jobmemo.dto.auth.LoginRequest;
 import com.himischa.jobmemo.dto.auth.RegisterRequest;
 import com.himischa.jobmemo.model.ApplicationStatus;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
