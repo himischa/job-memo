@@ -15,9 +15,9 @@ docker compose up -d postgres
 mvn spring-boot:run
 ```
 
-## API Documentation (Swagger)
+The API runs at http://localhost:8080.
 
-Once the app is running:
+## API Documentation (Swagger)
 
 - **Swagger UI**: http://localhost:8080/swagger-ui.html
 - **API docs (JSON)**: http://localhost:8080/v3/api-docs
@@ -27,4 +27,11 @@ Once the app is running:
 ```bash
 mvn test
 ```
->(The `net.bytebuddy.experimental` flag is already configured in the build for Java 25+ compatibility.)
+
+## Docker
+
+Build and run everything (PostgreSQL + API):
+
+```bash
+docker compose up -d
+```
