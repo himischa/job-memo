@@ -1,8 +1,30 @@
 # Job Memo Frontend
 
-React + Vite + TypeScript frontend for Job Memo.
+React + TypeScript + Vite frontend for Job Memo.
 
 ## Setup
-- Copy .env.example to .env and fill in values
-- Install deps: npm install
-- Run dev server: npm run dev
+
+```bash
+# 1. Copy env file
+cp .env.example .env
+
+# 2. Install dependencies
+npm install
+
+# 3. Start dev server
+npm run dev
+```
+
+The app runs at http://localhost:5173.
+
+## Build for production
+
+```bash
+npm run build
+```
+
+## Lint / Type check
+
+```bash
+npx tsc --noEmit
+```
