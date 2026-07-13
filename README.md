@@ -146,7 +146,7 @@ job-memo/
 |---|---|---|
 | `DB_HOST` | `localhost` | Postgres host |
 | `DB_PORT` | `5432` | Postgres port |
-| `DB_NAME` | `jobmemo` | Database name |
+| `DB_NAME` | `jobmemodb` | Database name |
 | `DB_USERNAME` | `postgres` | Database user |
 | `DB_PASSWORD` | `postgres` | Database password |
 | `APP_PORT` | `8080` | API server port |
